@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var Book_1 = require("./entities/Book");
+var main = function () {
+    var books = [
+        new Book_1.Book("title 1", "author 1", 5),
+        new Book_1.Book("title 2", "author 2")
+    ];
+    books.forEach(function (book) { return console.log(book.title, book.canBuy()); });
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHdDQUF1QztBQUV2QyxJQUFNLElBQUksR0FBRztJQUNULElBQU0sS0FBSyxHQUFHO1FBQ1YsSUFBSSxXQUFJLENBQUMsU0FBUyxFQUFFLFVBQVUsRUFBRSxDQUFDLENBQUM7UUFDbEMsSUFBSSxXQUFJLENBQUMsU0FBUyxFQUFFLFVBQVUsQ0FBQztLQUNsQyxDQUFDO0lBRUYsS0FBSyxDQUFDLE9BQU8sQ0FBQyxVQUFDLElBQUksSUFBSyxPQUFBLE9BQU8sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLEtBQUssRUFBRSxJQUFJLENBQUMsTUFBTSxFQUFFLENBQUMsRUFBdEMsQ0FBc0MsQ0FBQyxDQUFBO0FBQ25FLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJvb2sgfSBmcm9tIFwiLi9lbnRpdGllcy9Cb29rXCI7XHJcblxyXG5jb25zdCBtYWluID0gKCkgPT4ge1xyXG4gICAgY29uc3QgYm9va3MgPSBbXHJcbiAgICAgICAgbmV3IEJvb2soXCJ0aXRsZSAxXCIsIFwiYXV0aG9yIDFcIiwgNSksXHJcbiAgICAgICAgbmV3IEJvb2soXCJ0aXRsZSAyXCIsIFwiYXV0aG9yIDJcIilcclxuICAgIF07XHJcblxyXG4gICAgYm9va3MuZm9yRWFjaCgoYm9vaykgPT4gY29uc29sZS5sb2coYm9vay50aXRsZSwgYm9vay5jYW5CdXkoKSkpXHJcbn0iXX0=

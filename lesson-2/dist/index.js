@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Book_1 = require("./entities/Book");
+const main = () => {
+    const books = [
+        new Book_1.Book("title 1", "author 1", 5),
+        new Book_1.Book("title 2", "author 2")
+    ];
+    books.forEach((book) => console.log(book.title, book.canBuy()));
+};
+main();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwwQ0FBdUM7QUFFdkMsTUFBTSxJQUFJLEdBQUcsR0FBRyxFQUFFO0lBQ2QsTUFBTSxLQUFLLEdBQUc7UUFDVixJQUFJLFdBQUksQ0FBQyxTQUFTLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQztRQUNsQyxJQUFJLFdBQUksQ0FBQyxTQUFTLEVBQUUsVUFBVSxDQUFDO0tBQ2xDLENBQUM7SUFFRixLQUFLLENBQUMsT0FBTyxDQUFDLENBQUMsSUFBSSxFQUFFLEVBQUUsQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxLQUFLLEVBQUUsSUFBSSxDQUFDLE1BQU0sRUFBRSxDQUFDLENBQUMsQ0FBQTtBQUNuRSxDQUFDLENBQUM7QUFFRixJQUFJLEVBQUUsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJvb2sgfSBmcm9tIFwiLi9lbnRpdGllcy9Cb29rXCI7XHJcblxyXG5jb25zdCBtYWluID0gKCkgPT4ge1xyXG4gICAgY29uc3QgYm9va3MgPSBbXHJcbiAgICAgICAgbmV3IEJvb2soXCJ0aXRsZSAxXCIsIFwiYXV0aG9yIDFcIiwgNSksXHJcbiAgICAgICAgbmV3IEJvb2soXCJ0aXRsZSAyXCIsIFwiYXV0aG9yIDJcIilcclxuICAgIF07XHJcblxyXG4gICAgYm9va3MuZm9yRWFjaCgoYm9vaykgPT4gY29uc29sZS5sb2coYm9vay50aXRsZSwgYm9vay5jYW5CdXkoKSkpXHJcbn07XHJcblxyXG5tYWluKCk7Il19
