@@ -1,15 +1,27 @@
-export class Book {
-    title: string;
+import { Product } from './Product';
+import { Genre } from '../types/Genre';
+
+enum Type {
+    NEW,
+    OLD
+};
+
+export class Book extends Product<Type> {
+    // title: string;
     author: string;
-    price?: number;
+    genre: Genre;
 
-    constructor(title: string, author: string, price?: number) {
-        this.title = title;
+    constructor(title: string, author: string, genre: Genre, price?: number) {
+        super(title, 1, Type.OLD, price);
+
+        // this.title = title;
         this.author = author;
-        this.price = price;
+        this.genre = genre;
+        // this.price = price;
     };
 
-    canBuy(): boolean {
-        return typeof this.price === "number";
-    };
+    // canBuy(): boolean {
+    //     return typeof this.price === "number";
+    // };
+    
 };
