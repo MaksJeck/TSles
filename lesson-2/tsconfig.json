@@ -6,8 +6,12 @@
         "module": "CommonJS",
         "moduleResolution": "node",
         "esModuleInterop": true,
+        "allowJs": true,
+        "declaration": true,
+        "declarationDir": "dist/rootTypes"
     },
     "files": [
         "src/index.ts"
-    ]
+    ],
+    "include": ["src/**/*"]
 }
