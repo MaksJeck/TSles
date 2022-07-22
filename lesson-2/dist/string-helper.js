@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.toUpperCase = void 0;
+const toUpperCase = (someString) => {
+    return someString.toUpperCase();
+};
+exports.toUpperCase = toUpperCase;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RyaW5nLWhlbHBlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9zdHJpbmctaGVscGVyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFPLE1BQU0sV0FBVyxHQUFHLENBQUMsVUFBVSxFQUFFLEVBQUU7SUFDdEMsT0FBTyxVQUFVLENBQUMsV0FBVyxFQUFFLENBQUM7QUFDcEMsQ0FBQyxDQUFBO0FBRlksUUFBQSxXQUFXLGVBRXZCIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IHRvVXBwZXJDYXNlID0gKHNvbWVTdHJpbmcpID0+IHtcclxuICAgIHJldHVybiBzb21lU3RyaW5nLnRvVXBwZXJDYXNlKCk7XHJcbn0iXX0=
