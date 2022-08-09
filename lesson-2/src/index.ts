@@ -5,6 +5,7 @@ import { Calendar } from "./entities/Calendar";
 import { MyMap } from "./common/MyMap"
 import { toUpperCase } from "./string-helper.js";
 import { IBook, IOptions, search } from "google-books-search";
+import { Logger } from "./common/Logger";
 
 // import { IBook } from "./types/Book";
 
@@ -20,34 +21,59 @@ import { IBook, IOptions, search } from "google-books-search";
 //     return entity.price ? entity.price.toString() : "не продается"
 // };
 
-const getFrom = <T extends Product<any>>(obj: Record<string, T>, title: string): T | undefined => {
+const getFrom = <T extends MyMap<any>>(obj: Record<string, T>, title: string): T | undefined => {
     // const book = array.find(book => book.title.toLowerCase() === title.toLowerCase());
+   
     return obj[title];
 };
 
-const searchBooks = (query: string, options: IOptions = {}): Promise<IBook[]> =>
-    new Promise((resolve, reject) => {
-        search(query, options, (error, result) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(result);
-            }
-        })
-    })
+// const searchBooks = (query: string, options: IOptions = {}): Promise<IBook[]> =>
+//     new Promise((resolve, reject) => {
+//         search(query, options, (error, result) => {
+//             if (error) {
+//                 reject(error);
+//             } else {
+//                 resolve(result);
+//             }
+//         })
+//     })
 
 const main = async () => {
+    const book = new Book("title 1", "author 1", "fantasy", 5);
+    // book.reviews.push({
+    //     author: "Max",
+    //     text: "text",
+    //     score: 4
+    // });
 
-    try {
-        const books = await searchBooks("Harry Poter", {
-            limit: 1,
-        });
-        console.log(books);
-    } catch (error) {
+    book.addReview({
+        author: "Max",
+        text: "text",
+        score: 4
+    });
+    book.addReview({
+        author: "Lexa",
+        text: "text",
+        score: 1
+    });
 
-    }
+    // console.log(book.title, book.reviews, book.score);
+    // book.getInfo();
+    // Product.getInfo(book);
+    Book.getInfo(book);
+    // Logger.info(book.title);
+    // Logger.error("some error");
+
+    // try {
+    //     const books = await searchBooks("Harry Poter", {
+    //         limit: 1,
+    //     });
+    //     console.log(books);
+    // } catch (error) {
+
+    // }
     // console.log(toUpperCase("lfrkferf"));
-    console.log(1);
+    // console.log(1);
 
 
     // const map = new MyMap<string, Product>();

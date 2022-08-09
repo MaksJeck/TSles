@@ -8,5 +8,6 @@ export declare class Book extends Product<Type> {
     author: string;
     genre: Genre;
     constructor(title: string, author: string, genre: Genre, price?: number);
+    getInfo(): void;
 }
 export {};

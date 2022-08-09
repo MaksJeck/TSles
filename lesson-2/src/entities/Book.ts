@@ -19,6 +19,9 @@ export class Book extends Product<Type> {
         this.genre = genre;
         // this.price = price;
     };
+    getInfo() {
+        console.log(this.title, this.price, this.type);
+    }
 
     // canBuy(): boolean {
     //     return typeof this.price === "number";
