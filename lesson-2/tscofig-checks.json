@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": false,
+        "noImlicitThis": true,
+        "useUnknownInCatchVariables": false,
+        "noPropertyAccessFromIndexSignature": false
+    }
+}
