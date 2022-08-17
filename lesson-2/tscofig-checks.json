@@ -8,6 +8,9 @@
         "strictBindCallApply": false,
         "noImlicitThis": true,
         "useUnknownInCatchVariables": false,
-        "noPropertyAccessFromIndexSignature": false
+        "noPropertyAccessFromIndexSignature": false,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitReturns": true,
+        "noFalltroughCasesInSwitch": true
     }
 }

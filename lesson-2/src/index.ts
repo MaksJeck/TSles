@@ -23,7 +23,7 @@ import { Logger } from "./common/Logger";
 
 const getFrom = <T extends MyMap<any>>(obj: Record<string, T>, title: string): T | undefined => {
     // const book = array.find(book => book.title.toLowerCase() === title.toLowerCase());
-   
+
     return obj[title];
 };
 
@@ -39,89 +39,137 @@ const getFrom = <T extends MyMap<any>>(obj: Record<string, T>, title: string): T
 //     })
 
 const main = async () => {
-    const book = new Book("title 1", "author 1", "fantasy", 5);
-    // book.reviews.push({
+    // const book = new Book("title 1", "author 1", "fantasy", 5);
+    // // book.reviews.push({
+    // //     author: "Max",
+    // //     text: "text",
+    // //     score: 4
+    // // });
+
+    // book.addReview({
     //     author: "Max",
     //     text: "text",
     //     score: 4
     // });
+    // book.addReview({
+    //     author: "Lexa",
+    //     text: "text",
+    //     score: 1
+    // });
+    // Book.getInfo(book);
 
-    book.addReview({
-        author: "Max",
-        text: "text",
-        score: 4
-    });
-    book.addReview({
-        author: "Lexa",
-        text: "text",
-        score: 1
-    });
+    //------------ правило "alwaysStrict" добавляет во все файлы *.js "use strict"
+    // "use strict"
+    // user = "Alex";
+    // console.log(user);    
+    //------------
 
-    // console.log(book.title, book.reviews, book.score);
-    // book.getInfo();
-    // Product.getInfo(book);
-    Book.getInfo(book);
-    // Logger.info(book.title);
-    // Logger.error("some error");
+    //------------ правило "noImplicitAny"
+    // Запрет неявной типизации Any   
+    //------------
 
-    // try {
-    //     const books = await searchBooks("Harry Poter", {
-    //         limit: 1,
-    //     });
-    //     console.log(books);
-    // } catch (error) {
+    //------------ правило "strictNullChecks"
+    // Делает невозможным использование undefined и null вместо других типов
+    //------------
 
-    // }
-    // console.log(toUpperCase("lfrkferf"));
-    // console.log(1);
+    //------------ правило "strictPropertyInitialization"
+    // Cледит чтобы свойства, объявленные в классе были проинициализированы 
+    // во время их объявления или в конструкторе
+    //------------
 
+    //------------ правило "strictFunctionTypes"
+    //    interface RemoveBookFromFavorites {
+    //    // id может быть строкой или числом
+    //    (id: string | number): Promise<string | number>
+    //    }
+    //    // но здесь указывается только string
+    //    // при этом ошибок не возникает
+    //    const removeBook: RemoveBookFromFavorites = (id: string) => {
+    //    // здесь должна быть реализация
+    //    return Promise.resolve(id)
+    //    }
+    //------------
 
-    // const map = new MyMap<string, Product>();
-
-    // console.log(1, map.getAll());
-
-    // map.set("title 1", new Book("title 1", "author 1", "fantasy", 5));
-    // console.log(2, map.getAll());
-    // map.set("title 2", new Notepad("title 2"));
-    // console.log(3, map.getAll());
-    // map.remove("title 2");
-    // console.log(4, map.getAll());
-    // map.set("title 2", new Notepad("title 2"));
-    // console.log(5, map.getAll());
-    // map.clear();
-    // console.log(6, map.getAll());
-
-
-    // const book: IBook = {
-    //     title: "Заголовок",
-    //     author: {
-    //         name: "Ivan",
-    //         age: 30
+    //------------ правило "strictBindCallApply"
+    // const Person = {
+    //     age: 40,
+    //     getAge: function (num: number) {
+    //         return this.age * num;
     //     },
-    //     price: 5
+    // };
+    // const Andrey = {
+    //     age: 21,
+    // };
+    // console.log(Person.getAge.call(Andrey, "text"));    
+    //------------
+
+    //------------ правило "noImlicitThis"
+    // Правило для компилятора, для проверки this
+    //------------
+
+    //------------ правило "useUnknownInCatchVariables"
+    // try {
+    //     throw "error"
+    // } catch (error: unknown) {
+    //     if (error instanceof Error) {
+    //         console.log(error.message);
+    //     }
+    //     if (typeof error === "string") {
+    //         console.log(error.toUpperCase());
+    //     }
+    // };
+    //------------
+
+    //------------ правило "noPropertyAccessFromIndexSignature"
+    //    interface SomeStructure {
+    //    // точно известные свойства
+    //    id: string
+    //    name: string
+    //    // произвольные параметры, которые могут быть,
+    //    // а могут не быть
+    //    [key: string]: string
+    //    }
+    //    Promise.resolve<SomeStructure>(
+    //    {
+    //    id: '5',
+    //    name: 'Harry Potter',
+    //    author: 'J. K. Rowling'
+    //    }
+    //    ).then((book) => {
+    //    // name точно будет существовать, а author и genre не обязательно
+    //    console.log(book.name, book.author.toUpperCase(), book.genre.toUpperCase())
+    //    });
+    //------------
+
+    //------------ правило "noUncheckedIndexedAccess"
+    // дополняет работу предыдущего и помогает обнаружить ошибки
+    //------------
+
+    //------------ правило "noImplicitReturns"
+    // const getNumber = (num: number | string): number => {
+    //     if (typeof num === "number") {
+    //         return num;
+    //     };
+    // };
+    //------------
+
+    //------------ правило "noFalltroughCasesInSwitch"
+    // function getGenreIcon(num: 1 | 2): number {
+    // let number: number
+    // switch(num) {
+    // case 1:
+    //     number = 1;
+    //     break;
+    // case 2:
+    //     number = 2;
+    //     break;
+    // default:
+    //     number = 3;
     // }
-    //--------------------------------------------------------
-    // const books = {
-    //     "title 1": new Book("title 1", "author 1", "fantasy", 5),
-    //     "title 2": new Book("title 2", "author 2", "science")
+    // return number;
     // };
-    // const notepads = {
-    //     "title 1": new Notepad("title 1", 5),
-    //     "title 2": new Notepad("title 2")
-    // };
-
-    // const calendars = {
-    //     "title 1": new Calendar("title 1", "Calendar 1"),
-    //     "title 2": new Calendar("title 2", "Calendar 2", 3)
-    // };
-
-    // console.log(getFrom<Book>(books, "title 1"));
-    // console.log(getFrom<Notepad>(notepads, "title 3"));
-    // console.log(getFrom<Calendar>(calendars, "title 2"));
-    //---------------------------------------------------
-
-    // books.forEach((book) => showData(book));
-    // notepads.forEach((notepad) => showData(notepad));    
+    // console.log(getGenreIcon(2));    
+    //------------      
 };
 
 main();
