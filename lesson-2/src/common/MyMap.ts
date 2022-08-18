@@ -1,12 +1,13 @@
 export class MyMap<K extends string | number | symbol = string, V = any> {
     data = {} as Record<K, V>;
+    count: number = 0;
 
     set(key: K, value: V): void {
         this.data[key] = value;
     };
-    // setAll(key: K, value: V): void {
-    //     this.data[key] = value;
-    // };
+    setAll(key: K, value: V): void {  //Lesson 3
+        this.data[key] = value;
+    };
     get(key: K): V | undefined {
         return this.data[key];
     };

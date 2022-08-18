@@ -7,25 +7,15 @@ import { toUpperCase } from "./string-helper.js";
 import { IBook, IOptions, search } from "google-books-search";
 import { Logger } from "./common/Logger";
 
-// import { IBook } from "./types/Book";
 
-// const showData = (entity: unknown): void => {
-//     if(entity instanceof Book) {
-//         console.log(`Книга - ${entity.title} - ${entity.author} - ${getPrice(entity)}`)
-//     } else if (entity instanceof Notepad) {
-//       console.log(`Блокнот - ${getPrice(entity)}`)  
-//     }    
-// };
+const basket: MyMap[] = [];
 
-// const getPrice = (entity: Book | Notepad): string => {
-//     return entity.price ? entity.price.toString() : "не продается"
-// };
-
-const getFrom = <T extends MyMap<any>>(obj: Record<string, T>, title: string): T | undefined => {
+const getFrom = <T extends MyMap<string, any>>(obj: Record<string, T>, title: string): T | undefined => { //Lesson 3
     // const book = array.find(book => book.title.toLowerCase() === title.toLowerCase());
 
     return obj[title];
 };
+console.log(getFrom("что тут нужно написать, не понимаю", "text"));
 
 // const searchBooks = (query: string, options: IOptions = {}): Promise<IBook[]> =>
 //     new Promise((resolve, reject) => {
